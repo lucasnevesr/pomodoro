@@ -1,4 +1,9 @@
-# React + Vite
+# Pomodoro Clock application
+
+This repository contains an study project that implements a pomodoro clock on browser
+
+## Stack Used
+- React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
