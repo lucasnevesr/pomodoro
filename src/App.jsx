@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Buttons from './components/Buttons/Buttons';
+import ActionsButtons from './components/ActionsButtons/ActionsButtons';
 
 function App() {
   //controlar se o que esta rodando é o break ou o pomodoro
@@ -47,29 +47,8 @@ function App() {
   return (
     <div>
       <h1>{formatTimeLeft(secondsLeft)}</h1>
-      <button
-        onClick={() => {
-          setIsRunning(true);
-        }}
-      >
-        Start
-      </button>
-      <button
-        onClick={() => {
-          setIsRunning(false);
-        }}
-      >
-        Pause
-      </button>
-      <button
-        onClick={() => {
-          setIsRunning(false);
-          setSecondsLeft(pomoLenght * 60);
-        }}
-      >
-        Restart
-      </button>
-      {/* <Buttons setTime={setTime} setIsRunning={setIsRunning}/> */}
+
+      <ActionsButtons setSecondsLeft={setSecondsLeft} setIsRunning={setIsRunning} pomoLenght={pomoLenght} />
     </div>
   );
 }
