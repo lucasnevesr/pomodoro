@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import ActionsButtons from './components/ActionsButtons/ActionsButtons';
+import OptionsSessions from './components/OptionsSession/OptionsSession';
 
 function App() {
   //controlar se o que esta rodando é o break ou o pomodoro
@@ -46,9 +47,20 @@ function App() {
 
   return (
     <div>
+      <h2>Ready?</h2>
+
       <h1>{formatTimeLeft(secondsLeft)}</h1>
 
       <ActionsButtons setSecondsLeft={setSecondsLeft} setIsRunning={setIsRunning} pomoLenght={pomoLenght} />
+
+      <OptionsSessions
+        setBreakLength={setBreakLength}
+        setPomoLength={setPomoLength}
+        breakLength={breakLength}
+        pomoLenght={pomoLenght}
+        setSecondsLeft={setSecondsLeft}
+        setNextPeriod={setNextPeriod}
+      />
     </div>
   );
 }

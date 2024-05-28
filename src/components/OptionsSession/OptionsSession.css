@@ -1,0 +1,35 @@
+#optionsSession {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#sessionTime {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    margin-top: 100px;
+    
+}
+
+#breakTime {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    margin-top: 100px;
+   
+}
+
+#breakInput {
+    height: 50px;
+}
+
+#sessionInput {
+    height: 50px;
+}
+
+#optionTitle {
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
