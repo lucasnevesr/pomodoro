@@ -9,7 +9,7 @@
     flex-direction: column;
     padding: 1.5em;
     margin-top: 100px;
-    
+    align-items: center;
 }
 
 #breakTime {
@@ -17,19 +17,39 @@
     flex-direction: column;
     padding: 1.5em;
     margin-top: 100px;
-   
+    align-items: center;
 }
 
-#breakInput {
+
+
+#input {
+    
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #213547;
+    font-size: 40px;
+    text-align: center;
     height: 50px;
+    width: 50px;
+    border: none;
+    background-color: #adc9c7;
 }
 
-#sessionInput {
-    height: 50px;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
 
 #optionTitle {
     font-weight: bolder;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.arrowBtns {
+    border-radius: 10px;
+    
+    
 }
