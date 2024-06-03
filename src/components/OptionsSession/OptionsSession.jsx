@@ -6,7 +6,7 @@ function OptionsSession({ setBreakLength, setPomoLength, pomoLenght, breakLength
   function setSessionTime(event) {
     const newTimeSession = event.target.value;
 
-    if (parseInt(newTimeSession) >= 5 && parseInt(newTimeSession) <= 60) {
+    if (parseInt(newTimeSession) >= 2 && parseInt(newTimeSession) <= 60) {
       setPomoLength(newTimeSession);
       setSecondsLeft(newTimeSession * 60);
       console.log(newTimeSession);

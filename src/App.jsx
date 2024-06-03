@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import ActionsButtons from './components/ActionsButtons/ActionsButtons';
 import OptionsSessions from './components/OptionsSession/OptionsSession';
+import useSound from 'use-sound';
+import alarm from './alarme.mp3';
 
 function App() {
   //controlar se o que esta rodando é o break ou o pomodoro
@@ -10,6 +12,7 @@ function App() {
   const [pomoLenght, setPomoLength] = useState(25);
   const [secondsLeft, setSecondsLeft] = useState(pomoLenght * 60);
   const [isRunning, setIsRunning] = useState(false);
+  const [play] = useSound(alarm);
 
   useEffect(() => {
     if (isRunning) {
@@ -21,9 +24,11 @@ function App() {
         clearInterval(interval);
         setIsRunning(false);
 
+        play();
+
         if (nextPeriod === breakLength) {
           //avisar que acabou o tempo e irá começar a outra etapa (break ou pomodoro)
-          alert('Break start now!');
+
           //setar o secondsLeft para a etapa definida
           setSecondsLeft(breakLength * 60);
           setIsRunning(true);
@@ -39,7 +44,7 @@ function App() {
 
       return () => clearInterval(interval);
     }
-  }, [isRunning, secondsLeft, pomoLenght, breakLength, nextPeriod]);
+  }, [isRunning, secondsLeft, pomoLenght, breakLength, nextPeriod, play]);
 
   const formatTimeLeft = (seconds) => {
     return `${Math.floor(seconds / 60)} : ${seconds % 60 > 9 ? seconds % 60 : '0' + (seconds % 60)}`;
